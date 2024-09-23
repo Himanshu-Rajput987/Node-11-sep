@@ -17,9 +17,23 @@ function getUser(req, res){
         console.log(err);
     }
 }
+// function addUser(req, res){
+//     try{
+//         req.body.id = users.length+1;
+//         users.push(req.body);
+//         fs.writeFile('users.json', JSON.stringify(users), (err)=>{
+//              if(err){
+//                 console.log(err);
+//              }else{
+//                 res.end("User added...");
+//              }
+//         })
+//     }catch(err){
+
+//     }
+// }
 
 module.exports = {
     getAllUsers,
-    getUser,
-    deleteUser
+    getUser
 }

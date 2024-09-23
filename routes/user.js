@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+router.use(express.json());
 const usercontroller = require('../controllers/usercontroller');
 
 router.get('/users', (req, res)=>{
@@ -11,9 +12,9 @@ router.get('/user/:id', (req, res)=>{
     usercontroller.getUser(req, res);
 })
 
-//http.//localhost:3000/delete/user/5
-router.delete('/delete/user/:id', (req, res)=>{
-    usercontroller.deleteUser(req, res);
+//http://localhost:3000/add/user
+router.post('/add/user', (req, res)=>{
+    usercontroller.addUser(req, res);
 })
 
 module.exports = router;
